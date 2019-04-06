@@ -3,8 +3,8 @@ define([
 ], function (
     Postmonger
 ) {
-		'use strict';
-			var Postmonger = require('postmonger');
+	'use strict';
+    var Postmonger = require('postmonger');
 	var connection = new Postmonger.Session();
 	var payload = {};
 	var eventDefinitionKey = '';
@@ -21,85 +21,7 @@ define([
 		}
 	}
 
-	function onClickedNext () {
-		if (currentStep.key === 'idselection') {
-			save();
-		} else {
-			connection.trigger('nextStep');
-		}
-	}
-
-	function onClickedBack () {
-		connection.trigger('prevStep');
-	}
-
-	function onGotoStep (step) {
-		showStep(step);
-		connection.trigger('ready');
-	}
-
-	function showStep (step, stepIndex) {
-		if (stepIndex && !step) {
-			step = steps[stepIndex - 1];
-		}
-
-		currentStep = step;
-
-		$('.step').hide();
-
-		switch (currentStep.key) {
-		case 'eventdefinitionkey':
-			$('#step1').show();
-			$('#step1 input').focus();
-			break;
-		case 'idselection':
-			$('#step2').show();
-			$('#step2 input').focus();
-			break;
-		}
-	}
-
-	function requestedInteractionHandler (settings) {
-		try {
-			eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
-			$('#select-entryevent-defkey').val(eventDefinitionKey);
-
-			if (settings.triggers[0].type === 'SalesforceObjectTriggerV2' &&
-					settings.triggers[0].configurationArguments &&
-					settings.triggers[0].configurationArguments.eventDataConfig) {
-
-				// This workaround is necessary as Salesforce occasionally returns the eventDataConfig-object as string
-				if (typeof settings.triggers[0].configurationArguments.eventDataConfig === 'stirng' ||
-							!settings.triggers[0].configurationArguments.eventDataConfig.objects) {
-						settings.triggers[0].configurationArguments.eventDataConfig = JSON.parse(settings.triggers[0].configurationArguments.eventDataConfig);
-				}
-
-				settings.triggers[0].configurationArguments.eventDataConfig.objects.forEach((obj) => {
-					deFields = deFields.concat(obj.fields.map((fieldName) => {
-						return obj.dePrefix + fieldName;
-					}));
-				});
-
-				deFields.forEach((option) => {
-					$('#select-id-dropdown').append($('<option>', {
-						value: option,
-						text: option
-					}));
-				});
-
-				$('#select-id').hide();
-				$('#select-id-dropdown').show();
-			} else {
-				$('#select-id-dropdown').hide();
-				$('#select-id').show();
-			}
-		} catch (e) {
-			console.error(e);
-			$('#select-id-dropdown').hide();
-			$('#select-id').show();
-		}
-	}
-
+	
 	function save () {
 		var campaignId = parseInt($("#camp").val());
             var title = $("#titl").val();
@@ -158,8 +80,5 @@ define([
 	}
 
 	connection.on('initActivity', initialize);
-	connection.on('clickedNext', onClickedNext);
-	connection.on('clickedBack', onClickedBack);
-	connection.on('gotoStep', onGotoStep);
-	connection.on('requestedInteraction', requestedInteractionHandler);
+	
 });

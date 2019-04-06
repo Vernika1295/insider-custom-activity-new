@@ -8,8 +8,6 @@ const express = require('express');
 const verifyJwt = require(Path.join(__dirname, 'lib', 'jwt.js'));
 // Helper class that handles all the interactions with Salesforce Service Cloud
 // and makes sure open connections are reused for subsequent requests.
-const ServiceCloud = require(Path.join(__dirname, 'lib', 'sfdc.js'));
-const sfdc = new ServiceCloud(Pkg.options.salesforce.serviceCloud);
 
 const app = express();
 
@@ -30,7 +28,8 @@ app.post('/activity/execute', (req, res) => {
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			
 			var jsonObj={};
-            jsonObj["api_key"]=apikey;
+			/*
+			jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];
             var notificationObj={};
             notificationObj["target"]={};
@@ -45,7 +44,7 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["channel_id"]=channelId;
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
-
+			*/
             console.log("Json structure: " + JSON.stringify(jsonObj));
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);

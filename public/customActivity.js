@@ -4,11 +4,6 @@ define(function (require) {
 	var Postmonger = require('postmonger');
 	var connection = new Postmonger.Session();
 	var payload = {};
-	var steps = [
-		{'key': 'eventdefinitionkey', 'label': 'Event Definition Key'},
-		{'key': 'idselection', 'label': 'ID Selection'}
-	];
-	var currentStep = steps[0].key;
 	var eventDefinitionKey = '';
 	var deFields = [];
 

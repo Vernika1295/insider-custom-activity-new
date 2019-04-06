@@ -1,7 +1,10 @@
-'use strict';
-
-define(function (require) {
-	var Postmonger = require('postmonger');
+define([
+    'postmonger'
+], function (
+    Postmonger
+) {
+		'use strict';
+			var Postmonger = require('postmonger');
 	var connection = new Postmonger.Session();
 	var payload = {};
 	var eventDefinitionKey = '';

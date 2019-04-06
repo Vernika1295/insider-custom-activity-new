@@ -1,0 +1,43 @@
+body {
+    padding: 20px;
+    margin: 0;
+}
+
+.step {
+    display: none;
+}
+
+#step1 {
+    display: block;
+}
+
+.form-body{
+    border: solid 2px black;
+    border-radius: 8px;
+}
+
+.form-heading{
+    background: #c8c8c8e3;
+    color: #666464;
+    font-size: 18px;
+    font-weight: 600;
+}
+label{
+    width: 40%;
+}
+
+.inp-div-main{
+    width: 100%;
+}
+
+.label-div{
+    width: 40%;
+}
+
+.input-div{
+    width: 50%;
+}
+
+.done-btn{
+    margin-right: 0;
+}

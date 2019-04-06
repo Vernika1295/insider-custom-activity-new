@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Service Cloud Custom Split</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script data-main="js/main.js" type="text/javascript" src="js/require.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div id="step1" class="well">
+	  <form action="/person.php" method="post">
+		<div class="form-group form-heading">
+		  <img src="logo.PNG" />
+		  push activity
+		</div>
+		<div class="form-group">
+		  <label for="apikey">API Key</label>
+		  <input required="true" id="apikey" class="form-control" type="text" name="apikey"
+			placeholder="Enter the API key here">
+		</div>
+		<div class="form-group">
+		  <label for="Title">Title</label>
+		  <input id="titl" required="true" class="form-control" type="text" name="Title"
+			placeholder="Enter the title here">
+		</div>
+		<div class="form-group">
+		  <label for="Message">Message</label>
+		  <input required=true class="form-control" id="msg" type="text" name="Message"
+			placeholder="Enter your message here">
+		</div>
+  
+		<div class="form-group">
+		  <label for="image">Image URL</label>
+		  <input id="imgurl" class="form-control" type="url" name="image" placeholder="Enter the image url here">
+		</div>
+		<div class="form-group">
+		  <label for="email">Email Key</label>
+		  <input id="eml" required="false" class="form-control" type="email" name="email"
+			placeholder="Enter the email here" />
+		</div>
+		<div class="form-group">
+		  <label for="deeplink">Deep Link Key</label>
+		  <input id="deep" required="false" class="form-control" type="text" name="deeplink"
+			placeholder="Enter the deep link here">
+		</div>
+		<div class="form-group">
+		  <label for="deeplinkval">Deep Link Value</label>
+		  <input id="deepval" required="false" class="form-control" type="text" name="deeplinkval"
+			placeholder="Enter the deep link here">
+		</div>
+		<div class="form-group">
+		  <label for="channel">Channel ID</label>
+		  <input id="channel" required="false" class="form-control" type="number" name="channel"
+			placeholder="Enter the channel id here" />
+		</div>
+		<div class="form-group">
+		  <label for="campaign">Campaign</label>
+		  <input id="camp" required="false" class="form-control" type="number" name="campaign"
+			placeholder="Enter the campaign id here">
+		</div>
+  
+	  </form>
+	</div>
+  </body>
+  </html>

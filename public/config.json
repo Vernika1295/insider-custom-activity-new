@@ -2,7 +2,9 @@
 	"key": "1d35b6fa-e5d8-4fc5-970e-68176fe47cf9",
 	"metaData": {
 		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png"
+		"iconSmall": "images/icon_small.png",
+		"category": "message",
+      	"isConfigured": true
 	},
 	"type": "REST",
 	"lang": {
@@ -37,33 +39,14 @@
 		}
 	},
 	"wizardSteps": [
-		{"key": "eventdefinitionkey", "label": "Event Definition Key"},
-		{"key": "idselection", "label": "ID Selection"}
-	],
-	"outcomes": [
-		{
-			"arguments": {
-				"branchResult": "<KEY FOR PATH 1>"
-			},
-			"metaData": {
-				"label": "<LABEL FOR PATH 1>"
-			}
-		},
-		{
-			"arguments": {
-				"branchResult": "<KEY FOR PATH 2>"
-			},
-			"metaData": {
-				"label": "<LABEL FOR PATH 2>"
-			}
-		}
-	],
+	    { "label": "Configure Activity", "key": "step1" }
+  ],
 	"userInterfaces": {
-		"runningModal": {
-			"url": "runningModal.html"
-		},
-		"runningHover": {
-			"url": "runningHover.html"
+		"configModal": {
+			"url": "https://pushnotifyapp.herokuapp.com/index.html",
+			"height": 400,
+			"width": 1000,
+		  "fullscreen": false
 		}
 	},
 	"arguments": {
@@ -79,10 +62,5 @@
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2",
 			"timeout": 90000
 		}
-	},
-	"edit": {
-		"url": "https://pushnotifyapp.herokuapp.com/index.html",
-		"height": 200,
-		"width": 500
-	}
+	}	
 }

@@ -2,7 +2,7 @@
 	"key": "1d35b6fa-e5d8-4fc5-970e-68176fe47cf9",
 	"metaData": {
 		"icon": "images/icon.png",
-		"iconSmall": "images/icon_small.png",
+		"iconSmall": "images/iconSmall.png",
 		"category": "message",
       	"isConfigured": true
 	},

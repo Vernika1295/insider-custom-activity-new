@@ -18,7 +18,8 @@ define([
 	function initialize (data) {
 		if (data) {
 			payload = data;
-		}
+        }
+        alert("hey man");
 	}
 
 	

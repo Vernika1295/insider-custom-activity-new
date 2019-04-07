@@ -5,8 +5,6 @@ define([
 ) {
         'use strict';
         var Postmonger = require('postmonger');
-        var mongo=require('mongodb').MongoClient;
-        var connection = new Postmonger.Session();
         var payload = {};
         var eventDefinitionKey = '';
         var deFields = [];
@@ -20,6 +18,7 @@ define([
             if (data) {
                 payload = data;
             }
+            var connection = new Postmonger.Session();
             console.log("New-> " + JSON.stringify(payload));
             var apiKey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];
@@ -43,6 +42,8 @@ define([
 
 
         function save() {
+            var connection = new Postmonger.Session();
+        
             var campaignId = parseInt($("#camp").val());
             var title = $("#titl").val();
             var imageUrl = $("#imgurl").val();

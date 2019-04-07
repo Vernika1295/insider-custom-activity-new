@@ -20,7 +20,9 @@ define([
                 payload = data;
             }
             //var mongo=require('mongodb').MongoClient;
-            var mongo=new Mongo();
+            require(['mongodb'], function (foo) {
+                alert("loaded");
+            });
             console.log("New-> " + JSON.stringify(payload));
             var apiKey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];

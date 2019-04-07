@@ -19,10 +19,6 @@ define([
             if (data) {
                 payload = data;
             }
-            //var mongo=require('mongodb').MongoClient;
-            require(['mongodb'], function (foo) {
-                alert("loaded");
-            });
             console.log("New-> " + JSON.stringify(payload));
             var apiKey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];
@@ -46,8 +42,6 @@ define([
 
 
         function save() {
-           // var mongo=require('mongodb').MongoClient;
-        
             var campaignId = parseInt($("#camp").val());
             var title = $("#titl").val();
             var imageUrl = $("#imgurl").val();

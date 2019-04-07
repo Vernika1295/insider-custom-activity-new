@@ -52,9 +52,7 @@
 	"arguments": {
 		"execute": {
 			"inArguments": [
-				{
-					"emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
-			}	
+					
 			],
 			"outArguments": [],
 			"url": "https://pushnotifyapp.herokuapp.com/activity/execute",
@@ -66,21 +64,5 @@
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2",
 			"timeout": 90000
 		}
-	},
-	"schema": {
-		"arguments": {
-				"execute": {
-						"inArguments": [{
-							"emailAddress": {
-									"dataType": "Email",
-									"isNullable": false,
-									"direction": "in"
-							}
-					}],
-						"sendableCustomObjectField": "EmailAddress",
-						"sendableSubscriberField": "_SubscriberKey",
-						"outArguments": []
-				}
-		}
-}	
+	}	
 }

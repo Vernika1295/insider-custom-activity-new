@@ -27,8 +27,8 @@ app.post('/activity/execute', (req, res) => {
 		}
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-			
-			var jsonObj={};
+
+			var jsonObj = {};
 			/*
 			jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];
@@ -46,16 +46,16 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
 			*/
-            console.log("Json structure: " + JSON.stringify(jsonObj));
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.onreadystatechange = function (e) {
-                console.log(xhr.status);
-                console.log(xhr.readyState);
-                console.log(xhr.responseText);
-            };
-            xhr.send(JSON.stringify(jsonObj));
+			console.log("Json structure: " + JSON.stringify(jsonObj));
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function (e) {
+				console.log(xhr.status);
+				console.log(xhr.readyState);
+				console.log(xhr.responseText);
+			};
+			xhr.send(JSON.stringify(jsonObj));
 
 			/*
 			let serviceCloudId;
@@ -90,9 +90,9 @@ app.post('/activity/execute', (req, res) => {
 app.post(/\/activity\/(save|publish|validate)/, (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		// verification error -> unauthorized request
-		if (err)	return res.status(401).end();
+		if (err) return res.status(401).end();
 
-		return res.status(200).json({success: true});
+		return res.status(200).json({ success: true });
 	});
 });
 

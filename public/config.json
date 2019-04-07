@@ -4,7 +4,7 @@
 		"icon": "images/icon.png",
 		"iconSmall": "images/iconSmall.png",
 		"category": "message",
-      	"isConfigured": true
+		"isConfigured": true
 	},
 	"type": "REST",
 	"lang": {
@@ -17,21 +17,21 @@
 	"configurationArguments": {
 		"applicationExtensionKey": "1d35b6fa-e5d8-4fc5-970e-68176fe47cf9",
 		"save": {
-			"url": "https://pushnotifyapp.herokuapp.com/activity/save",
+			"url": "https://pushnotifyapp.herokuapp.com/save",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"publish": {
-			"url": "https://pushnotifyapp.herokuapp.com/activity/publish",
+			"url": "https://pushnotifyapp.herokuapp.com/publish",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"validate": {
-			"url": "https://pushnotifyapp.herokuapp.com/activity/validate",
+			"url": "https://pushnotifyapp.herokuapp.com/validate",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
@@ -39,23 +39,24 @@
 		}
 	},
 	"wizardSteps": [
-	    { "label": "Configure Activity", "key": "step1" }
-  ],
+		{
+			"label": "Configure Activity",
+			"key": "step1"
+		}
+	],
 	"userInterfaces": {
 		"configModal": {
 			"url": "https://pushnotifyapp.herokuapp.com/index.html",
 			"height": 400,
 			"width": 1000,
-		  "fullscreen": false
+			"fullscreen": false
 		}
 	},
 	"arguments": {
 		"execute": {
-			"inArguments": [
-					
-			],
+			"inArguments": [],
 			"outArguments": [],
-			"url": "https://pushnotifyapp.herokuapp.com/activity/execute",
+			"url": "https://pushnotifyapp.herokuapp.com/execute",
 			"verb": "POST",
 			"body": "",
 			"header": "",
@@ -64,5 +65,5 @@
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2",
 			"timeout": 90000
 		}
-	}	
+	}
 }

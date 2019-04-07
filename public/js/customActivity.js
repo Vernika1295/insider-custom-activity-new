@@ -80,5 +80,5 @@ define([
 	}
 
 	connection.on('initActivity', initialize);
-	
+	connection.on('clickedNext', save);
 });

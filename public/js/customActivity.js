@@ -58,7 +58,7 @@ define([
                 "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
             }];
             payload["metaData"]["isConfigured"]=true;
-            console.log("Payload is -> "+payload);
+            console.log("Payload is -> "+JSON.stringify(payload));
             connection.trigger('updateActivity',payload);
 		
 		/*

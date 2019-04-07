@@ -16,12 +16,29 @@ define([
 	});
 
 	function initialize (data) {
-        console.log("New-> "+JSON.stringify(payload));
         if (data) {
 			payload = data;
         }
         console.log("New-> "+JSON.stringify(payload));
-	}
+        var apiKey=payload["arguments"].execute.inArguments[0]["api_key"];
+        var title=payload["arguments"].execute.inArguments[0]["title"];
+        var message=payload["arguments"].execute.inArguments[0]["message"];
+        var emailKey=payload["arguments"].execute.inArguments[0]["emailKey"];
+        var imageUrl=payload["arguments"].execute.inArguments[0]["imageUrl"];
+        var deepLinkKey=payload["arguments"].execute.inArguments[0]["deepLinkKey"];
+        var deepLinkVal=payload["arguments"].execute.inArguments[0]["deepLinkVal"];
+        var channelid=payload["arguments"].execute.inArguments[0]["channel_id"];
+        var campid=payload["arguments"].execute.inArguments[0]["camp_id"];
+        $("#camp").val(campid);
+        $("#titl").val(title);
+        $("#imgurl").val(imageUrl);
+        $("#msg").val(message);
+        $("#apikey").val(apiKey);
+        $("#deep").val(deepLinkKey);
+        $("#deepval").val(deepLinkVal);
+        $("#channel").val(channelid);
+        $("#eml").val(emailKey);
+    }
 
 	
 	function save () {

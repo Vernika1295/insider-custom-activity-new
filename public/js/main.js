@@ -8,13 +8,13 @@ requirejs.config({
 		'jquery-3.3.1.min': {
 			exports: '$'
 		},
-		'../customActivity': {
+		'customActivity': {
 			deps: ['jquery-3.3.1.min', 'postmonger']
 		}
 	}
 });
 /*
-requirejs(['../jquery-3.3.1.min', '../customActivity'], function ($, customEvent) {
+requirejs(['../jquery-3.3.1.min', 'customActivity'], function ($, customEvent) {
 });
 */
 requirejs.onError = function (err) {

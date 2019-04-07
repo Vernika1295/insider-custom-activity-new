@@ -16,10 +16,11 @@ define([
 	});
 
 	function initialize (data) {
-		if (data) {
+        console.log("New-> "+JSON.stringify(payload));
+        if (data) {
 			payload = data;
         }
-        alert("hey man");
+        console.log("New-> "+JSON.stringify(payload));
 	}
 
 	

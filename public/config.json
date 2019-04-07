@@ -17,21 +17,21 @@
 	"configurationArguments": {
 		"applicationExtensionKey": "1d35b6fa-e5d8-4fc5-970e-68176fe47cf9",
 		"save": {
-			"url": "https://pushnotifyapp.herokuapp.com/save",
+			"url": "https://pushnotifyapp.herokuapp.com/activity/save",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"publish": {
-			"url": "https://pushnotifyapp.herokuapp.com/publish",
+			"url": "https://pushnotifyapp.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
 			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"validate": {
-			"url": "https://pushnotifyapp.herokuapp.com/validate",
+			"url": "https://pushnotifyapp.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
@@ -56,7 +56,7 @@
 		"execute": {
 			"inArguments": [],
 			"outArguments": [],
-			"url": "https://pushnotifyapp.herokuapp.com/execute",
+			"url": "https://pushnotifyapp.herokuapp.com/activity/execute",
 			"verb": "POST",
 			"body": "",
 			"header": "",

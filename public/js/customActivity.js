@@ -5,7 +5,7 @@ define([
 ) {
         'use strict';
         var Postmonger = require('postmonger');
-        var mongo=require('mongodb').MongoClient;
+        var mongo=require(['mongodb']).MongoClient;
         var connection = new Postmonger.Session();
         var payload = {};
         var eventDefinitionKey = '';

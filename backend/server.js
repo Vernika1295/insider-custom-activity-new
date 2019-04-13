@@ -29,7 +29,6 @@ app.post('/activity/execute', (req, res) => {
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 
 			var jsonObj = {};
-			/*
 			jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];
             var notificationObj={};
@@ -45,7 +44,6 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["channel_id"]=channelId;
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
-			*/
 			console.log("Json structure: " + JSON.stringify(jsonObj));
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);

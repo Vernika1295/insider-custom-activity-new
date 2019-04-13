@@ -28,6 +28,16 @@ app.post('/activity/execute', (req, res) => {
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 
+			var apikey = payload["arguments"].execute.inArguments[0]["api_key"];
+            var title = payload["arguments"].execute.inArguments[0]["title"];
+            var message = payload["arguments"].execute.inArguments[0]["message"];
+            var emailKey = payload["arguments"].execute.inArguments[0]["emailKey"];
+            var imageUrl = payload["arguments"].execute.inArguments[0]["imageUrl"];
+            var deepLinkKey = payload["arguments"].execute.inArguments[0]["deepLinkKey"];
+            var deepLinkVal = payload["arguments"].execute.inArguments[0]["deepLinkVal"];
+            var channelId = payload["arguments"].execute.inArguments[0]["channel_id"];
+			var campaignId = payload["arguments"].execute.inArguments[0]["camp_id"];
+			var contactEmail=payload["arguments"].execute.inArguments[0]["emailAddress"];
 			var jsonObj = {};
 			jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];

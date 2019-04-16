@@ -52,18 +52,15 @@ define([
             var channelId = parseInt($("#channel").val());
             var emailKey = $("#eml").val();
             //Validations
+            /*
             if (title.trim() == "" || message.trim() == "" || apikey.trim() == "") {
                 alert("Please fill all the required fields: Api Key, Message and Title.");
                 return false;
-            }
+            }*/
             if (channelId == "") {
                 channelId = 1;
             }
-            var contactEmail = "vernika.1295@gmail.com";
-            if (deepLinkKey == "sri") {
-                contactEmail = "srikant@useinsider.com";
-            }
-
+            
             payload["arguments"].execute.inArguments = [{
                 "api_key": apikey,
                 "emailKey": emailKey,
@@ -79,23 +76,6 @@ define([
             payload["metaData"]["isConfigured"] = true;
             console.log("Payload is -> " + JSON.stringify(payload));
             connection.trigger('updateActivity', payload);
-
-            /*
-            payload['arguments'] = payload['arguments'] || {};
-            payload['arguments'].execute = payload['arguments'].execute || {};
-    
-            var idField = deFields.length > 0 ? $('#select-id-dropdown').val() : $('#select-id').val();
-    
-            payload['arguments'].execute.inArguments = [{
-                'serviceCloudId': '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
-            }];
-    
-            payload['metaData'] = payload['metaData'] || {};
-            payload['metaData'].isConfigured = true;
-    
-            console.log(JSON.stringify(payload));
-    
-            connection.trigger('updateActivity', payload);*/
         }
 
         connection.on('initActivity', initialize);

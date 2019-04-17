@@ -81,7 +81,7 @@ app.post(/\/activity\/(save|publish|validate)/, (req, res) => {
 
 		return res.status(200).json({ success: true });
 	});*/
-	res.send(200).json({success:true});
+	res.send(200);//).json({success:true});
 });
 
 // Serve the custom activity's interface, config, etc.

@@ -71,7 +71,6 @@ define([
                 "deepLinkVal": deepLinkVal,
                 "channel_id": channelId,
                 "camp_id": campaignId,
-                "emailAddress": "{{Contact.Attribute.Contact_Extension.EmailAddress}}"
             }];
             payload["metaData"]["isConfigured"] = true;
             console.log("Payload is -> " + JSON.stringify(payload));

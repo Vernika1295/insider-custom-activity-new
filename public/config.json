@@ -54,7 +54,11 @@
 	},
 	"arguments": {
 		"execute": {
-			"inArguments": [],
+			"inArguments": [
+				{
+					"emailAddress":"{{Insider_Contacts_Extension.EmailAddress}}"
+				}
+			],
 			"outArguments": [],
 			"url": "https://pushnotifyapp.herokuapp.com/activity/execute",
 			"verb": "POST",

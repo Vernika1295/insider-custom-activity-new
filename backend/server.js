@@ -38,6 +38,7 @@ app.post('/activity/execute', (req, res) => {
             var channelId = payload["arguments"].execute.inArguments[0]["channel_id"];
 			var campaignId = payload["arguments"].execute.inArguments[0]["camp_id"];
 			var contactEmail=payload["arguments"].execute.inArguments[0]["emailAddress"];
+			console.log("Contact EMail--> "+contactEmail);
 			var jsonObj = {};
 			jsonObj["api_key"]=apikey;
             jsonObj["notifications"]=[];

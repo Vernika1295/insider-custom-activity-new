@@ -49,6 +49,7 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
 			console.log("Json structure: " + JSON.stringify(jsonObj));
+			var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
 			xhr.setRequestHeader("Content-Type", "application/json");

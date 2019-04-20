@@ -49,6 +49,34 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
 			console.log("Json structure: " + JSON.stringify(jsonObj));
+			
+			const https = require('https')
+
+			const options = {
+			hostname: 'https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com',
+			path: '/api/v1/notification/user',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			}
+			};
+
+			const req = https.request(options, (res) => {
+			console.log(`statusCode: ${res.statusCode}`)
+			/*		
+			res.on('data', (d) => {
+				process.stdout.write(d)
+			});*/
+			});
+
+			req.on('error', (error) => {
+			console.error(error)
+			});
+
+			req.write(jsonObj);
+			req.end();
+			console.log("Node callout processed");
+						/*
 			$.post('https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user', jsonObj).done(function(response){
 				console.log("success !");
 			});

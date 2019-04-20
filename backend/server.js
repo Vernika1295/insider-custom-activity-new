@@ -3,7 +3,7 @@
 const Path = require('path');
 const Pkg = require(Path.join(__dirname, '..', 'package.json'));
 const express = require('express');
-
+//const jObj=require('jquery');
 // Helper utility for verifying and decoding the jwt sent from Salesforce Marketing Cloud.
 const verifyJwt = require(Path.join(__dirname, 'lib', 'jwt.js'));
 // Helper class that handles all the interactions with Salesforce Service Cloud
@@ -59,8 +59,7 @@ app.post('/activity/execute', (req, res) => {
 				console.log(xhr.responseText);
 			};
 			xhr.send(JSON.stringify(jsonObj));
-
-
+			
 		// verification error -> unauthorized request
 		/*
 		if (err) {

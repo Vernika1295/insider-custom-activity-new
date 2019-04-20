@@ -19,7 +19,7 @@ app.use(require('body-parser').raw({
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
-		alert("Calling execute");
+		console.log("Calling execute");
 		// verification error -> unauthorized request
 		if (err) {
 			console.error(err);

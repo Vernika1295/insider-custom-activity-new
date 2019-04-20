@@ -56,7 +56,7 @@
 		"execute": {
 			"inArguments": [
 				{
-					"emailAddress":"{{Contact.Attribute.Test_Data_Extension.EmailAddress}}"
+					"emailAddress":"{{Contact.Default.Email}}"
 				}
 			],
 			"outArguments": [],

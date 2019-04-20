@@ -22,7 +22,7 @@ app.post('/activity/execute', (req, res) => {
 		console.log("Calling execute");
 		// verification error -> unauthorized request
 		if (err) {
-			console.log("hi");
+			console.log("An error occurred");
 			console.error(err);
 			return res.status(401).end();
 		}

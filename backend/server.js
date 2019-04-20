@@ -20,6 +20,8 @@ app.use(require('body-parser').raw({
 app.post('/activity/execute', (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		console.log("Calling execute");
+		console.log("Contact EMail--> "+payload["arguments"].execute.inArguments[0]["emailAddress"]);
+		console.log("api-> "+payload["arguments"].execute.inArguments[0]["api_key"]);
 		// verification error -> unauthorized request
 		if (err) {
 			console.error(err);

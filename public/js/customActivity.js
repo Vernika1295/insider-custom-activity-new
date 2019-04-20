@@ -19,8 +19,6 @@ define([
             if (data) {
                 payload = data;
             }
-            var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-			
             console.log("New-> " + JSON.stringify(payload));
             var apiKey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];

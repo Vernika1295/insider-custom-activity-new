@@ -20,7 +20,48 @@ app.use(require('body-parser').raw({
 app.post('/activity/execute', (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		console.log("Calling execute");
+
+		var apikey = "e2cf33939aa1b60b351312c5ece7c3ae";
+            var title = "Shubham hardcoded push";
+            var message = "This is a hard coded push";
+            var emailKey = "email";
+            var imageUrl = "";
+            var deepLinkKey = "";
+            var deepLinkVal = "";
+            var channelId = 1;
+			var campaignId = "";
+			var contactEmail="srikant@useinsider.com";
+			console.log("Contact EMail--> "+contactEmail);
+			var jsonObj = {};
+			jsonObj["api_key"]=apikey;
+            jsonObj["notifications"]=[];
+            var notificationObj={};
+            notificationObj["target"]={};
+            notificationObj["target"][emailKey]=contactEmail;
+            notificationObj["title"]=title;
+            notificationObj["message"]=message;
+            notificationObj["deep_link"]={};
+            notificationObj["deep_link"][deepLinkKey]=deepLinkVal;
+            notificationObj["image_URL"]=imageUrl;
+            notificationObj["android_sound"]="Beep";
+            notificationObj["ios_sound"]="Beep";
+            notificationObj["channel_id"]=channelId;
+            notificationObj["camp_id"]=campaignId;
+            jsonObj["notifications"].push(notificationObj); 
+			console.log("Json structure: " + JSON.stringify(jsonObj));
+			var xhr = new XMLHttpRequest();
+			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.onreadystatechange = function (e) {
+				console.log(xhr.status);
+				console.log(xhr.readyState);
+				console.log(xhr.responseText);
+			};
+			xhr.send(JSON.stringify(jsonObj));
+
+
 		// verification error -> unauthorized request
+		/*
 		if (err) {
 			console.log("An error occurred");
 			console.error(err);
@@ -69,7 +110,7 @@ app.post('/activity/execute', (req, res) => {
 		} else {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
-		}
+		}*/
 	});
 });
 

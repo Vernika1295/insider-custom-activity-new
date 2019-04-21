@@ -10,7 +10,7 @@ const verifyJwt = require(Path.join(__dirname, 'lib', 'jwt.js'));
 // and makes sure open connections are reused for subsequent requests.
 
 const app = express();
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+//const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // Register middleware that parses the request payload.
 app.use(require('body-parser').raw({
 	type: 'application/jwt'

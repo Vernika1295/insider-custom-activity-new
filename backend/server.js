@@ -82,8 +82,8 @@ app.post('/activity/execute', (req, res) => {
 				console.log("success !");
 			});
 		}catch(e){
-			console.log("jquery callout failed");
-		})
+			console.log("jquery callout failed");}
+	
 			/*
 			var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 			var xhr = new XMLHttpRequest();

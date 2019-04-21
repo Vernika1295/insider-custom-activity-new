@@ -81,7 +81,7 @@ app.post('/activity/execute', (req, res) => {
 			$.post('https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user', jsonObj).done(function(response){
 				console.log("success !");
 			});
-		}catch(e{
+		}catch(e){
 			console.log("jquery callout failed");
 		})
 			/*

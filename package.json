@@ -10,7 +10,8 @@
 		"body-parser": "^1.17.1",
 		"express": "^4.15.2",
 		"jsforce": "^1.7.1",
-		"jsonwebtoken": "^7.4.0"
+		"jsonwebtoken": "^7.4.0",
+		"xmlhttprequest": "1.x.x"
 	},
 	"options": {
 		"salesforce": {

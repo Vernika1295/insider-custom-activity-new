@@ -90,7 +90,8 @@ app.post('/activity/execute', (req, res) => {
 			var xhr = new XMLHttpRequest();
 			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.onreadystatechange = function (e) {
+			xhr.setRequestHeader('x-requested-with', 'XMLHTTPREQUEST');
+xhr.onreadystatechange = function (e) {
 				console.log(xhr.status);
 				console.log(xhr.readyState);
 				console.log(xhr.responseText);

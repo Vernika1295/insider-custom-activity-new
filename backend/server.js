@@ -21,6 +21,7 @@ app.post('/activity/execute', (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		console.log("Calling execute");
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
+		/*
 		var apikey = "e2cf33939aa1b60b351312c5ece7c3ae";
             var title = "Shubham hardcoded push";
             var message = "This is a hard coded push";
@@ -84,7 +85,7 @@ app.post('/activity/execute', (req, res) => {
 			});
 		}catch(e){
 			console.log("jquery callout failed");}
-	*/
+	*//*
 			
 			//var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 			var xhr = new XMLHttpRequest();
@@ -97,9 +98,9 @@ xhr.onreadystatechange = function (e) {
 				console.log(xhr.responseText);
 			};
 			xhr.send(JSON.stringify(jsonObj));
-			
+			*/
 		// verification error -> unauthorized request
-		/*
+		
 		if (err) {
 			console.log("An error occurred");
 			console.error(err);
@@ -107,7 +108,7 @@ xhr.onreadystatechange = function (e) {
 		}
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
-
+			console.log("decoded->"+decoded);
 			var apikey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];
             var message = payload["arguments"].execute.inArguments[0]["message"];
@@ -148,7 +149,7 @@ xhr.onreadystatechange = function (e) {
 		} else {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
-		}*/
+		}
 	});
 });
 

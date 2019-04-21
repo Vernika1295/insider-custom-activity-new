@@ -52,11 +52,6 @@ define([
             var channelId = parseInt($("#channel").val());
             var emailKey = $("#eml").val();
             //Validations
-            /*
-            if (title.trim() == "" || message.trim() == "" || apikey.trim() == "") {
-                alert("Please fill all the required fields: Api Key, Message and Title.");
-                return false;
-            }*/
             if (channelId == "") {
                 channelId = 1;
             }

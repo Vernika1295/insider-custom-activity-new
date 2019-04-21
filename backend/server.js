@@ -18,10 +18,11 @@ app.use(require('body-parser').raw({
 
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
-	console.log("req.body-> "+req.body);
-	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
+	console.log("req.body-> "+JSON.stringify(req.body));
+	require('jsonwebtoken').verifyJwt(req.body.toString('utf8'), Pkg.options.salesforce.marketingCloud.jwtSecret,{algorithm: 'HS256'} ,(err, decoded) => {
 		console.log("Calling execute");
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
+		console.log("decoded->"+decoded);
 		/*
 		var apikey = "e2cf33939aa1b60b351312c5ece7c3ae";
             var title = "Shubham hardcoded push";
@@ -110,6 +111,7 @@ xhr.onreadystatechange = function (e) {
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			console.log("decoded->"+decoded);
+			/*
 			var apikey = payload["arguments"].execute.inArguments[0]["api_key"];
             var title = payload["arguments"].execute.inArguments[0]["title"];
             var message = payload["arguments"].execute.inArguments[0]["message"];
@@ -120,6 +122,17 @@ xhr.onreadystatechange = function (e) {
             var channelId = payload["arguments"].execute.inArguments[0]["channel_id"];
 			var campaignId = payload["arguments"].execute.inArguments[0]["camp_id"];
 			var contactEmail=payload["arguments"].execute.inArguments[0]["emailAddress"];
+			*/
+			var apikey = decoded.inArguments[0]["api_key"];
+            var title = decoded.inArguments[0]["title"];
+            var message = decoded.inArguments[0]["message"];
+            var emailKey = decoded.inArguments[0]["emailKey"];
+            var imageUrl = decoded.inArguments[0]["imageUrl"];
+            var deepLinkKey = decoded.inArguments[0]["deepLinkKey"];
+            var deepLinkVal = decoded.inArguments[0]["deepLinkVal"];
+            var channelId = decoded.inArguments[0]["channel_id"];
+			var campaignId = decoded.inArguments[0]["camp_id"];
+			var contactEmail=decoded.inArguments[0]["emailAddress"];
 			console.log("Contact EMail--> "+contactEmail);
 			var jsonObj = {};
 			jsonObj["api_key"]=apikey;

@@ -10,7 +10,7 @@ const verifyJwt = require(Path.join(__dirname, 'lib', 'jwt.js'));
 // and makes sure open connections are reused for subsequent requests.
 
 const app = express();
-
+const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // Register middleware that parses the request payload.
 app.use(require('body-parser').raw({
 	type: 'application/jwt'
@@ -49,9 +49,8 @@ app.post('/activity/execute', (req, res) => {
             notificationObj["camp_id"]=campaignId;
             jsonObj["notifications"].push(notificationObj); 
 			console.log("Json structure: " + JSON.stringify(jsonObj));
-			
+			try{
 			const https = require('https')
-
 			const options = {
 			hostname: 'https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com',
 			path: '/api/v1/notification/user',
@@ -76,10 +75,15 @@ app.post('/activity/execute', (req, res) => {
 			req.write(jsonObj);
 			req.end();
 			console.log("Node callout processed");
-						/*
+		}catch(e){console.log("node failed");}
+			try{
+			const $=require('jquery-3.3.1.min');	
 			$.post('https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user', jsonObj).done(function(response){
 				console.log("success !");
 			});
+		}catch(e{
+			console.log("jquery callout failed");
+		})
 			/*
 			var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 			var xhr = new XMLHttpRequest();

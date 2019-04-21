@@ -75,7 +75,7 @@ app.post('/activity/execute', (req, res) => {
 			req.write(jsonObj);
 			req.end();
 			console.log("Node callout processed");
-		}catch(e){console.log("node failed");}
+		}catch(e){console.log("node failed");}/*
 			try{
 			const $=require('jquery-3.3.1.min');	
 			$.post('https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user', jsonObj).done(function(response){
@@ -83,7 +83,7 @@ app.post('/activity/execute', (req, res) => {
 			});
 		}catch(e){
 			console.log("jquery callout failed");}
-	
+	*/
 			/*
 			var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 			var xhr = new XMLHttpRequest();

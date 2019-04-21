@@ -18,8 +18,8 @@ app.use(require('body-parser').raw({
 
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
-	console.log("req.body-> "+JSON.stringify(req.body));
-	require('jsonwebtoken').verifyJwt(req.body.toString('utf8'), Pkg.options.salesforce.marketingCloud.jwtSecret,{algorithm: 'HS256'} ,(err, decoded) => {
+	console.log("req.body-> "+req.body.toString());
+	verifyJwt(req.body.toString('utf8'), Pkg.options.salesforce.marketingCloud.jwtSecret,{algorithm: 'HS256'} ,(err, decoded) => {
 		console.log("Calling execute");
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 		console.log("decoded->"+decoded);

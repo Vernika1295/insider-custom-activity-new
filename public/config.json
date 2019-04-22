@@ -66,7 +66,7 @@
 			"header": "",
 			"format": "json",
 			"useJwt": true,
-			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2",
+			"customerKey": "3c24cd45-7d9f-49c9-901f-8c52f0a2000d",
 			"timeout": 90000
 		}
 	}

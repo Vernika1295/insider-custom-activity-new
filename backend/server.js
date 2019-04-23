@@ -19,7 +19,7 @@ app.use(require('body-parser').raw({
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
 		//verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
-		var jwt = new JWT({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
+		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
 
 		// Object representing the data in the JWT
 		var decoded = jwt.decode(req);

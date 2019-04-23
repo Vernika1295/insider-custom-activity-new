@@ -74,7 +74,7 @@ define([
 
         connection.on('initActivity', initialize);
         connection.on('clickedNext', save);
-
+/*
 
         const Path = require('path');
 const Pkg = require(Path.join(__dirname, '../../', 'package.json'));
@@ -166,11 +166,11 @@ app.post(/\/activity\/(publish|validate)/, (req, res) => {
 		if (err) return res.status(401).end();
 
 		return res.status(200).json({ success: true });
-	});*/
+	});*//*
 	console.log("Body from publish-> "+JSON.stringify(req.body));
 	res.send(200);//).json({success:true});
 });
-
+*/
 // Serve the custom activity's interface, config, etc.
 app.use(express.static(Path.join(__dirname, '..', 'public')));
 

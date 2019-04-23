@@ -28,11 +28,7 @@ app.post('/activity/execute', (req, res) => {
 		console.log("Body->"+JSON.stringify(req.body));
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 		console.log("decoded->"+decoded);
-		if (err) {
-			console.log("An error occurred");
-			console.error(err);
-			return res.status(401).end();
-		}
+		
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			console.log("decoded->"+decoded);

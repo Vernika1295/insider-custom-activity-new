@@ -23,7 +23,7 @@ app.post('/activity/execute', (req, res) => {
 
 		// Object representing the data in the JWT
 		var decoded = jwt.decode(req);
-		console.log("Decoded after JWT: "+decoded);
+		console.log("Decoded after JWT: "+JSON.stringify(decoded));
 		console.log("Calling execute");
 		console.log("Body->"+JSON.stringify(req.body));
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);

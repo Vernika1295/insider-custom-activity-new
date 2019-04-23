@@ -77,7 +77,7 @@ app.post('/activity/execute', (req, res) => {
 });
 
 app.post('/activity/save',(req,res)=>{
-	console.log("Body from publish-> "+JSON.stringify(req.body));
+	//console.log("Body from publish-> "+JSON.stringify(req.body));
 	res.send(200);
 });
 

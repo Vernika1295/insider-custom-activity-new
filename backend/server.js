@@ -18,7 +18,12 @@ app.use(require('body-parser').raw({
 
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
-	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
+		//verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
+		var jwt = new JWT({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
+
+		// Object representing the data in the JWT
+		var decoded = jwt.decode(req);
+		console.log("Decoded after JWT: "+decoded);
 		console.log("Calling execute");
 		console.log("Body->"+JSON.stringify(req.body));
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
@@ -72,7 +77,7 @@ app.post('/activity/execute', (req, res) => {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
 		}
-	});
+	//});
 });
 
 // Routes for saving, publishing and validating the custom activity. In this case

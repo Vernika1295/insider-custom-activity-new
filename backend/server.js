@@ -20,6 +20,7 @@ app.use(require('body-parser').raw({
 app.post('/activity/execute', (req, res) => {
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
 		console.log("Calling execute");
+		console.log("Body->"+JSON.stringify(req.body));
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 		console.log("decoded->"+decoded);
 		if (err) {

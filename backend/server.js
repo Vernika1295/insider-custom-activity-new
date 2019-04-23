@@ -86,6 +86,7 @@ app.post(/\/activity\/(save|publish|validate)/, (req, res) => {
 
 		return res.status(200).json({ success: true });
 	});*/
+	console.log("Body from publish-> "+JSON.stringify(req.body));
 	res.send(200);//).json({success:true});
 });
 

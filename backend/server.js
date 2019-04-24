@@ -8,14 +8,14 @@ const express = require('express');
 const verifyJwt = require(Path.join(__dirname, 'lib', 'jwt.js'));
 // Helper class that handles all the interactions with Salesforce Service Cloud
 // and makes sure open connections are reused for subsequent requests.
-
+var bodyParser  = require('body-parser');
 const app = express();
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // Register middleware that parses the request payload.
 /*app.use(require('body-parser').raw({
 	type: 'application/jwt'
 })); */
-
+app.use(bodyParser.raw({type: 'application/jwt'}));
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
 		//verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {

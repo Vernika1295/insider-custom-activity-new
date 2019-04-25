@@ -13,7 +13,7 @@ JwtDecoder.VERSION = VERSION;
 
 JwtDecoder.prototype.decode = function( req ) {
     var jwtObj = {};
-    var jwt = req.body.jwt;
+    var jwt = req.body;
 
     try {
         var decoded = jwtLib.decode( jwt, this.options.appSignature );

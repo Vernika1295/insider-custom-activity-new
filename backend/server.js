@@ -29,6 +29,7 @@ app.post('/activity/execute', (req, res) => {
 		console.log("Body->"+JSON.stringify(req.body));
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 		console.log("decoded->"+decoded);
+		console.log("JWT from process->"+process.env.jwtSecret);
 		
 
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {

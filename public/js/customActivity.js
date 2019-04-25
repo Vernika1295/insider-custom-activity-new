@@ -57,15 +57,15 @@ define([
             if (channelId == "") {
                 channelId = 1;
             }
-            payload['arguments'].execute.inArguments.push({"api_key": apikey});
-	payload['arguments'].execute.inArguments.push({"emailKey": emailKey});
-	payload['arguments'].execute.inArguments.push({"title": title});
-	payload['arguments'].execute.inArguments.push({"message": message});
-	payload['arguments'].execute.inArguments.push({"imageUrl": imageUrl});
-	payload['arguments'].execute.inArguments.push({"deepLinkKey": deepLinkKey});
-	payload['arguments'].execute.inArguments.push({"deepLinkVal": deepLinkVal});
-	payload['arguments'].execute.inArguments.push({"channel_id": channelId});
-	payload['arguments'].execute.inArguments.push({"camp_id": campaignId});
+		payload["arguments"].execute.inArguments[0]["api_key"] = apikey;
+		payload["arguments"].execute.inArguments[0]["title"] = title;
+		payload["arguments"].execute.inArguments[0]["message"] = message;
+		payload["arguments"].execute.inArguments[0]["emailKey"] = emailKey;
+		payload["arguments"].execute.inArguments[0]["imageUrl"] = imageUrl;
+		payload["arguments"].execute.inArguments[0]["deepLinkKey"] = deepLinkKey ;
+                payload["arguments"].execute.inArguments[0]["deepLinkVal"] = deepLinkVal;
+                payload["arguments"].execute.inArguments[0]["channel_id"] = channelId;
+		payload["arguments"].execute.inArguments[0]["camp_id"] = campaignId;
 
 	/*
             payload["arguments"].execute.inArguments = [{

@@ -17,7 +17,7 @@ JwtDecoder.prototype.decode = function( req ) {
 
     try {
         var decoded = jwtLib.decode(jwt.toString('utf8'), this.options.appSignature);
-        jwtObj.full = decoded;
+        jwtObj = decoded;
     } catch( ex ) {
         console.error( 'Decoding failed for jwt: ' + jwt );
         console.error( 'Exception: ' + ex );

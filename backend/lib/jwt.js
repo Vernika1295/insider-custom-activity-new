@@ -14,6 +14,7 @@ JwtDecoder.VERSION = VERSION;
 JwtDecoder.prototype.decode = function( req ) {
     var jwtObj = {};
     var jwt = req.body;
+    console.log("jwt token"+jwt.token);
 
     try {
         console.log("jwt key->"+this.options.appSignature);

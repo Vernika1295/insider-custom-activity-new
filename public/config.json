@@ -21,21 +21,18 @@
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"publish": {
 			"url": "https://pushnotifyapp.herokuapp.com/activity/publish",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		},
 		"validate": {
 			"url": "https://pushnotifyapp.herokuapp.com/activity/validate",
 			"verb": "POST",
 			"body": "",
 			"useJwt": true,
-			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2"
 		}
 	},
 	"wizardSteps": [
@@ -66,7 +63,6 @@
 			"header": "",
 			"format": "json",
 			"useJwt": true,
-			"customerKey": "abzWLPd_ZtfVdMOB9krfOTFlg7bWOj23XKKnxIxy0zHvylrYEgciT27llJDHcnGDhembfSHoXxLM_g887uslusaA-bdjNcrG1aF64V_CENUqUUXhBNgUXHR6nP9h87ffnikLE5UC5GiV-OEDGVz4nbaYG1r3ph3EXOVUghVlTRiWcPW0kxpnXT-WK-ZArZ0o7f9Ii9T18rdA_95LaoOcdzpugF45JWtn7Cp7V4MGhTiIQAgJSczQOLsfniGz8A2",
 			"timeout": 90000
 		}
 	}

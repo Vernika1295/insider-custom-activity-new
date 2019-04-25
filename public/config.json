@@ -53,7 +53,7 @@
 		"execute": {
 			"inArguments": [
 				{
-					"emailAddress":"{{Contact.Email Address .Emai Addressl}}"
+					"emailAddress":"{{Contact.EmailAddress.EmailAddressl}}"
 				}
 			],
 			"outArguments": [],

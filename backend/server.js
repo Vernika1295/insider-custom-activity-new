@@ -86,6 +86,14 @@ app.post('/activity/save',(req,res)=>{
 // Routes for saving, publishing and validating the custom activity. In this case
 // nothing is done except decoding the jwt and replying with a success message.
 app.post(/\/activity\/(publish|validate)/, (req, res) => {
+		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
+
+		// Object representing the data in the JWT
+		var decoded = jwt.decode(req);
+		console.log("Decoded after JWT: "+JSON.stringify(decoded));
+		console.log("Calling publish");
+		console.log("Body->"+JSON.stringify(req.body));
+		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 	/*
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		// verification error -> unauthorized request

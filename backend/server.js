@@ -12,11 +12,9 @@ var bodyParser  = require('body-parser');
 const app = express();
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // Register middleware that parses the request payload.
-/*app.use(require('body-parser').raw({
-	type: 'application/jwt'
-})); */
+
 app.use(bodyParser.raw({type: 'application/jwt'}));
-/*app.use(bodyParser.json());*/
+
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
 		//verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
@@ -27,11 +25,8 @@ app.post('/activity/execute', (req, res) => {
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
 		console.log("Calling execute");
 		console.log("Body->"+req.body);
-		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 		console.log("decoded->"+decoded);
-		console.log("JWT from process->"+process.env.jwtSecret);
 		
-
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			console.log("decoded->"+decoded);
 			var apikey = decoded.inArguments[0]["api_key"];
@@ -94,7 +89,6 @@ app.post(/\/activity\/(publish|validate)/, (req, res) => {
 		console.log("decode after JWT:"+decoded);
 		console.log("Calling publish");
 		console.log("Body->"+req.body);
-		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 	/*
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
 		// verification error -> unauthorized request

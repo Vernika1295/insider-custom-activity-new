@@ -9,7 +9,7 @@
 	"type": "REST",
 	"lang": {
 		"en-US": {
-			"name": "Insider Push App",
+			"name": "Mobile App Push",
 			"description": "Custom activity that sends push notifications to the contact"
 		}
 	},

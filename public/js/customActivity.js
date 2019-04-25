@@ -42,10 +42,8 @@ define([
 
 
         function save() {
-		console.log("Payload on entering save-> " + JSON.stringify(payload));
-		payload['arguments'] = payload['arguments'] || {};
-		payload['arguments'].execute = payload['arguments'].execute || {};
-		console.log("payload after new code> " + JSON.stringify(payload));
+		
+	
             var campaignId = parseInt($("#camp").val());
             var title = $("#titl").val();
             var imageUrl = $("#imgurl").val();
@@ -60,7 +58,16 @@ define([
                 channelId = 1;
             }
             payload['arguments'].execute.inArguments.push({"api_key": apikey});
-	console.log("payload after my code " + JSON.stringify(payload));
+	payload['arguments'].execute.inArguments.push({"emailKey": emailKey});
+	payload['arguments'].execute.inArguments.push({"title": title});
+	payload['arguments'].execute.inArguments.push({"message": message});
+	payload['arguments'].execute.inArguments.push({"imageUrl": imageUrl});
+	payload['arguments'].execute.inArguments.push({"deepLinkKey": deepLinkKey});
+	payload['arguments'].execute.inArguments.push({"deepLinkVal": deepLinkVal});
+	payload['arguments'].execute.inArguments.push({"channel_id": channelId});
+	payload['arguments'].execute.inArguments.push({"camp_id": campaignId});
+
+	/*
             payload["arguments"].execute.inArguments = [{
                 "api_key": apikey,
                 "emailKey": emailKey,
@@ -72,10 +79,8 @@ define([
                 "channel_id": channelId,
                 "camp_id": campaignId,
             }];
-		console.log("payload after overide " + JSON.stringify(payload));
-		payload['metaData'] = payload['metaData'] || {};
-            payload["metaData"]["isConfigured"] = true;
-		console.log("New-> " + JSON.stringify(payload));
+	    */
+	payload["metaData"]["isConfigured"] = true;
             console.log("Payload is -> " + JSON.stringify(payload));
             connection.trigger('updateActivity', payload);
         }

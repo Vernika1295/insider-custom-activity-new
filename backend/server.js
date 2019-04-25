@@ -92,7 +92,7 @@ app.post(/\/activity\/(publish|validate)/, (req, res) => {
 		var decoded = jwt.decode(req);
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
 		console.log("Calling publish");
-		console.log("Body->"+JSON.stringify(req.body));
+		console.log("Body->"+req.body);
 		console.log("JWT-> "+Pkg.options.salesforce.marketingCloud.jwtSecret);
 	/*
 	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {

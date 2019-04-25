@@ -15,10 +15,10 @@ JwtDecoder.prototype.decode = function( req ) {
     var jwtObj = {};
     var jwt = req.body;
     console.log("jwt token"+jwt.token);
-
+  
     try {
         console.log("jwt key->"+this.options.appSignature);
-        var decoded = jwtLib.decode(jwt, this.options.appSignature);
+        var decoded = jwtLib.decode(jwt.toString('utf8'), this.options.appSignature);
         jwtObj.full = decoded;
     } catch( ex ) {
         console.error( 'Decoding failed for jwt: ' + jwt );

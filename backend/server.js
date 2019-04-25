@@ -70,6 +70,7 @@ app.post('/activity/execute', (req, res) => {
 });
 
 app.post('/activity/save',(req,res)=>{
+	console.log("Body->"+req.body);
 	res.send(200);
 });
 

@@ -21,7 +21,7 @@ app.post('/activity/execute', (req, res) => {
 		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
 
 		// Object representing the data in the JWT
-		var decoded = jwt.decode(req.body);
+		var decoded = jwt.decode(req);
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
 		console.log("Calling execute");
 		console.log("Body->"+req.body);
@@ -84,7 +84,7 @@ app.post(/\/activity\/(publish|validate)/, (req, res) => {
 		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
 
 		// Object representing the data in the JWT
-		var decoded = jwt.decode(req.body);
+		var decoded = jwt.decode(req);
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
 		console.log("decode after JWT:"+decoded);
 		console.log("Calling publish");

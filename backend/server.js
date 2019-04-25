@@ -23,7 +23,7 @@ app.post('/activity/execute', (req, res) => {
 		// Object representing the data in the JWT
 		var decoded = jwt.decode(req);
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
-		console.log("decode length"+decode.inArguments.length);
+		console.log("decoded length"+decoded.inArguments.length);
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			console.log("decoded->"+decoded);
 			var apikey = decoded.inArguments[0]["api_key"];

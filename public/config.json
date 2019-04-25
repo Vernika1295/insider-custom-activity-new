@@ -53,7 +53,7 @@
 		"execute": {
 			"inArguments": [
 				{
-					"emailAddress":"test@gmail.com"
+					"emailAddress":"{{Contact.Default.Email}}"
 				}
 			],
 			"outArguments": [],

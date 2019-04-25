@@ -17,7 +17,7 @@ app.use(bodyParser.raw({type: 'application/jwt'}));
 
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
-		
+		console.log("Body in execute->"+req.body);
 		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
 
 		// Object representing the data in the JWT

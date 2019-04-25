@@ -17,15 +17,13 @@ app.use(bodyParser.raw({type: 'application/jwt'}));
 
 // Route that is called for every contact who reaches the custom split activity
 app.post('/activity/execute', (req, res) => {
-		//verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret,(err, decoded) => {
+		
 		var jwt = new verifyJwt({appSignature: Pkg.options.salesforce.marketingCloud.jwtSecret});
 
 		// Object representing the data in the JWT
 		var decoded = jwt.decode(req);
 		console.log("Decoded after JWT: "+JSON.stringify(decoded));
-		console.log("Calling execute");
-		console.log("Body->"+req.body);
-		console.log("decoded->"+decoded);
+		console.log("excute decoded->"+decoded);
 		
 		if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
 			console.log("decoded->"+decoded);
@@ -70,11 +68,9 @@ app.post('/activity/execute', (req, res) => {
 			console.error('inArguments invalid.');
 			return res.status(400).end();
 		}
-	//});
 });
 
 app.post('/activity/save',(req,res)=>{
-	console.log("Body from publish-> "+JSON.stringify(req.body));
 	res.send(200);
 });
 
@@ -89,15 +85,8 @@ app.post(/\/activity\/(publish|validate)/, (req, res) => {
 		console.log("decode after JWT:"+decoded);
 		console.log("Calling publish");
 		console.log("Body->"+req.body);
-	/*
-	verifyJwt(req.body, Pkg.options.salesforce.marketingCloud.jwtSecret, (err, decoded) => {
-		// verification error -> unauthorized request
-		if (err) return res.status(401).end();
-
-		return res.status(200).json({ success: true });
-	});*/
-	console.log("Body from publish-> "+JSON.stringify(req.body));
-	res.send(200);//).json({success:true});
+	
+	res.send(200);
 });
 
 // Serve the custom activity's interface, config, etc.

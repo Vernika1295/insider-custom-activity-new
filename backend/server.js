@@ -55,12 +55,16 @@ app.post('/activity/execute', (req, res) => {
             jsonObj["notifications"].push(notificationObj); 
 			console.log("Json structure: " + JSON.stringify(jsonObj));
 			var xhr = new XMLHttpRequest();
-			xhr.open("POST", "https://cors-anywhere.herokuapp.com/https://mobile.useinsider.com/api/v1/notification/user", true);
+			xhr.open("POST", "https://mobile.useinsider.com/api/v1/notification/user", true);
 			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 			xhr.onreadystatechange = function (e) {
-				console.log(xhr.status);
-				console.log(xhr.readyState);
-				console.log(xhr.responseText);
+				console.log("status -> ", xhr.status);
+				console.log("ready state ", xhr.readyState);
+				console.log("response ", xhr.responseText);
+				if (xhr.status == 200) {
+					res.status(200).end();
+				}
 			};
 			xhr.send(JSON.stringify(jsonObj));
 		} else {
